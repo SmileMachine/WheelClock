@@ -136,6 +136,8 @@ themeToggler.addEventListener('click', () => {
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
 	setTheme(currentTheme);
+} else {
+	setTheme('dark');
 }
 
 function updateRootVariables() {
