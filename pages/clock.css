@@ -1,0 +1,142 @@
+:root {
+	--bg-color: #f8f8f8;
+	--text-color: #000000;
+	--size: 8em;
+	--range: 7;
+	--transmid: calc((var(--range) - 1) * 48%);
+}
+
+/* dark theme */
+[data-theme="dark"] {
+	--bg-color: #000000;
+	--text-color: #eeddcc;
+}
+
+@font-face {
+	font-family: 'Recursive';
+	/* font-weight: normal; */
+	/* font-variation-settings: 'casl' 1.0; */
+	
+}
+b, strong {
+	/* font-family: 'Recursive'; */
+	font-variation-settings: 'wght' 850;
+	/* font-weight: 850; */
+}
+
+/* @media only screen and (max-width: 800px) {
+	:root {
+		--size: 6em;
+		--range: 8;
+		--transmid: calc((var(--range) - 1) * 48%);
+	}
+}
+
+@media only screen and (max-height: 800px) {
+	:root {
+		--range: 5;
+		--transmid: calc((var(--range) - 1) * 48%);
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	:root {
+		--size: 4em;
+		--range: 11;
+		--transmid: calc((var(--range) - 1) * 48%);
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	:root {
+		--size: 3em;
+		--range: 14;
+		--transmid: calc((var(--range) - 1) * 48%);
+	}
+} */
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	/* 水平居中 */
+	align-items: center;
+	/* 垂直居中 */
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+.clock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clock-unit {
+	height: calc(var(--size) * var(--range));
+	/* 2个数字的高度 */
+	overflow: hidden;
+	position: relative;
+	margin: 0 5px;
+}
+
+.digit {
+	font-size: var(--size);
+	font-family: 'Recursive';
+	line-height: 1em;
+	transform: translateY(0);
+}
+
+.gradient-top,
+.gradient-bottom {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 40%;
+	/* 渐变的高度 */
+	pointer-events: none;
+	/* 确保它不影响其他事件 */
+	bottom: 0;
+	background: linear-gradient(to top, var(--bg-color), transparent);
+}
+
+.gradient-bottom {
+	top: 0;
+	bottom: auto;
+	background: linear-gradient(to bottom, var(--bg-color), transparent);
+}
+
+
+.theme-toggler {
+    position: fixed;
+	z-index: 100;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggler {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+[data-theme="dark"] .theme-toggler {
+    background-color: #333;
+}
+
+.theme-toggler i {
+    font-size: 24px;
+    color: #333;
+}
+
+[data-theme="dark"] .theme-toggler i {
+    color: white;
+}
