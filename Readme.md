@@ -1,6 +1,6 @@
 # WheelClock
 
-Visit [WheelClock](https://smilemachine.github.io/) to see it in action.
+Visit [WheelClock](https://smilemachine.github.io/WheelClock) to see it in action.
 
 WheelClock presents a unique approach to visualizing time. Unlike traditional digital clocks that snap from one minute to the next, WheelClock offers a continuous and smooth transition. At any given moment, it not only indicates the current time but also offers a glimpse of the imminent future.
 
